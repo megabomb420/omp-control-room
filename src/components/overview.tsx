@@ -42,7 +42,7 @@ export function Overview({ data, navigate }: { data: LocalData; navigate: (path:
       try { localStorage.setItem('ocr.period', window.id) } catch { /* The view still works if preference storage is blocked. */ }
     }}>{window.label}</button>)}</div>
     <div className="stat-grid">
-      <div className="card"><p className="stat-label">Entered + estimated</p><p className="stat-value">{money(metrics.knownSum)}</p>{costSubtitle && <small>{costSubtitle}</small>}{(metrics.excluded > 0 || metrics.knownSum === null) && <small>{metrics.excluded} tasks excluded (cost unknown)</small>}</div>
+      <div className="card"><p className="stat-label">Entered + estimated</p><p className="stat-value">{money(metrics.knownSum)}</p>{costSubtitle && <small>{costSubtitle}</small>}{(metrics.excluded > 0) && <small>{metrics.excluded} tasks excluded (cost unknown)</small>}</div>
       <div className="card"><p className="stat-label">Tasks</p><p className="stat-value">{metrics.count}</p><small>{WINDOWS.find(window => window.id === windowId)?.label}</small></div>
       <div className="card"><p className="stat-label">Success</p><p className="stat-value">{rate(metrics.success)}</p><small>{metrics.solved} solved · {metrics.count} total</small></div>
       <div className="card"><p className="stat-label">Escalation help</p><p className="stat-value">{rate(metrics.escalationHelp)}</p><small>{metrics.unclear} unclear</small></div>
