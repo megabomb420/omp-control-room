@@ -1,0 +1,6 @@
+import './parser.test.ts'
+import './advisor.test.ts'
+import './metrics.test.ts'
+import './alerts.test.ts'
+import './backup.test.ts'
+import './forms-nav.test.ts'

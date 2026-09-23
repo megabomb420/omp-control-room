@@ -1,0 +1,30 @@
+{
+  "name": "omp-control-room",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "homepage": "https://megabomb420.github.io/omp-control-room/",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/copy-404.mjs",
+    "preview": "vite preview",
+    "test": "node --experimental-strip-types --test test/"
+  },
+  "dependencies": {
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "dexie": "^4.4.6",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "vite-plugin-pwa": "^1.3.0"
+  }
+}

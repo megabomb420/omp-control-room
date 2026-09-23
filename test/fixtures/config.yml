@@ -1,0 +1,12 @@
+modelRoles:
+  web: "xai-oauth/grok-4.7:high"
+  smol: "deepseek/deepseek-flash:low"
+  slow: "openai-codex/gpt-6-astra:max"
+  vision: "openai-codex/gpt-6-sol:high"
+  plan: "xai-oauth/grok-4.7:high"
+  commit: "deepseek/deepseek-flash:low"
+  task: "deepseek/deepseek-flash:high"
+  advisor: "openai-codex/gpt-6-sol:high"
+  image: "openai-codex/gpt-image-1:auto"
+  default: "deepseek/deepseek-flash:max"
+  speech: "xai-oauth/grok-tts:auto"
