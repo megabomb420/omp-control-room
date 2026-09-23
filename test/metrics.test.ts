@@ -26,8 +26,9 @@ test('ambiguous segment matches are unknown while an exact full selector wins', 
   assert.equal(taskCost(task({ primaryModel: 'model', inputTokens: 1e6 }), rows).kind, 'unknown')
   assert.deepEqual(taskCost(task({ primaryModel: 'DEEPSEEK/MODEL', inputTokens: 1e6 }), rows), { usd: 1, kind: 'estimated' })
 })
-test('unpriced known token sides prevent a partial underestimate', () => {
-  assert.equal(taskCost(task({ inputTokens: 1e6, cacheReadTokens: 100 }), [price()]).kind, 'unknown')
+test('estimates only sides with both tokens and a price, unknown when no side qualifies', () => {
+  assert.deepEqual(taskCost(task({ inputTokens: 1e6, cacheReadTokens: 100 }), [price()]), { usd: 1, kind: 'estimated' })
+  assert.equal(taskCost(task({ cacheReadTokens: 100 }), [price()]).kind, 'unknown')
   assert.deepEqual(taskCost(task({ inputTokens: 1e6, outputTokens: 2e6 }), [price()]), { usd: 5, kind: 'estimated' })
 })
 test('solved unknown costs and unjudged escalation steps use distinct denominators', () => {

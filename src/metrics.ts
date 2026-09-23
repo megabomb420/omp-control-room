@@ -16,7 +16,6 @@ export function taskCost(task: TaskRecord, prices: ModelPrice[]): CostFigure {
   ]
   let usd = 0, computed = false
   for (const [tokens, rate] of sides) {
-    if (tokens !== null && rate === null) return { usd: null, kind: 'unknown' }
     if (tokens !== null && rate !== null) { usd += tokens / 1e6 * rate; computed = true }
   }
   return computed ? { usd, kind: 'estimated' } : { usd: null, kind: 'unknown' }
